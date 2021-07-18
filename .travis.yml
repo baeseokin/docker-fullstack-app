@@ -6,20 +6,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t sibae/react-test-app -f ./frontend/Dockerfile.dev ./frontend
+  - docker build -t baeseokin/react-test-app -f ./frontend/Dockerfile.dev ./frontend
   - echo "end test image build"
 
 script:
-  - docker run -e CI=true sibae/react-test-app npm run test
+  - docker run -e CI=true baeseokin/react-test-app npm run test
 
 after_success:
-  - docker build -t sibae/docker-frontend ./frontend
-  - docker build -t sibae/docker-backend ./backend
-  - docker build -t sibae/docker-nginx ./nginx
+  - docker build -t baeseokin/docker-frontend ./frontend
+  - docker build -t baeseokin/docker-backend ./backend
+  - docker build -t baeseokin/docker-nginx ./nginx
 
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-  - docker push sibae/docker-frontend
-  - docker push sibae/docker-backend
-  - docker push sibae/docker-nginx
+  - docker push baeseokin/docker-frontend
+  - docker push baeseokin/docker-backend
+  - docker push baeseokin/docker-nginx
  
