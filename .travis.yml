@@ -7,6 +7,7 @@ services:
 
 before_install:
   - docker build -t sibae/react-test-app -f ./frontend/Dockerfile.dev ./frontend
+  - echo "end test image build"
 
 script:
   - docker run -e CI=true sibae/react-test-app npm run test
