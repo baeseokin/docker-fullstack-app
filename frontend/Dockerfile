@@ -3,9 +3,11 @@ WORKDIR /app
 COPY ./package.json ./
 RUN npm install
 COPY ./ ./
+RUN npm install web-vitals
+
 RUN npm run build
 
-RUN npm install web-vitals
+
 
 FROM nginx
 EXPOSE 3000
