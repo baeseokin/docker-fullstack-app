@@ -15,7 +15,7 @@ db.pool.query(`CREATE TABLE lists (
 });
 
 app.listen(5000, () => {
-    console.log("어플리케이션이 5000 포트에서 시작되었습니다.");
+    console.log("어플리케이션이 5000 포트에서 시작되었습니다.!!!");
 });
 
 //DB의 값을 가져와 화면에 보여주기
