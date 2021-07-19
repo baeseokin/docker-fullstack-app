@@ -22,7 +22,14 @@ services:
         container_name: app_backend
         volumes: 
             - /app/node_modules
-            - ./backend:/app    
+            - ./backend:/app
+        environment:
+            MYSQL_HOST: mysql
+            MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: sibae777
+            MYSQL_DATABASE: myapp
+            MYSQL_PORT: 3306
+
         
     # mysql:    
     #     build: ./mysql
